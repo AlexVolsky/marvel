@@ -1,0 +1,47 @@
+@import '../../style/variables.scss';
+
+.app {
+   
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20vw;
+        color: $white;
+        text-shadow: 1px 1px 5px rgb(194, 133, 133);
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 1.7rem;
+        line-height: 37px;
+       
+        span {
+            text-shadow: 1px 1px 10px rgb(255, 0, 0);
+            font-size: 4.5rem;
+
+            
+        }
+    }
+    &__menu {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 32px;
+           
+            li {
+                margin: 0 13px;
+                a, p{
+                    transition: .7s ease-in-out;
+                }
+                
+                
+                p:hover, a:hover {
+                    color: $main-color;
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
