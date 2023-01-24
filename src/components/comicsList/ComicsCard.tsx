@@ -1,4 +1,4 @@
-import { IComics } from "../InterfaceComic";
+import { IComics } from '../../store/type/comics';
 import React from 'react';
 
 const ViewComics = ({comics, onComicSelected} : { comics: IComics[], onComicSelected: (id: number) => void})=> {

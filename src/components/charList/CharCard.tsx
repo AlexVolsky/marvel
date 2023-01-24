@@ -1,11 +1,14 @@
 import React from 'react';
-import { IChar } from '../charInfo/CharInfo';
+import { IChar } from '../../store/type/chars';
+import { useSelector } from 'react-redux';
 
-const CharCard = ({ chars, onCharSelected } : { chars: IChar[], onCharSelected: (id: number) => void})=> {
+const CharCard = ({ /* chars, */ onCharSelected } : { /* chars: IChar[], */ onCharSelected: (id: number) => void})=> {
   let imgStyleCover: object = { 'objectFit': 'cover' };
   let linkImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
   let imgStyleContain = { 'objectFit': 'contain' };
-
+  const {chars, error, loading, offset} = useSelector(
+    (store: { chars: { chars: IChar[]; error: boolean; loading: boolean; offset: number}}) => store.chars
+  );
     return (
       <>
         {chars.map((item) => 

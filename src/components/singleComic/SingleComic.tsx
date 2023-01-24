@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './singleComic.scss';
-import { IComics } from '../InterfaceComic';
-import xMen from '../../resources/img/x-men.png';
-import useMarvelService from '../../services/marvelService';
+import { IComics } from '../../store/type/comics';
 import Spinner from '../Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/marvelService';
 
 const SingleComic = ({ ComicId }: { ComicId: number }) => {
     const initialComic = {

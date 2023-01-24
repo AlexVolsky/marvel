@@ -1,13 +1,14 @@
 import React, { useState , useEffect, useRef} from 'react';
 import './comicsList.scss';
-import { IComics } from '../InterfaceComic';
+import { IComics } from '../../store/type/comics';
 import ViewComics from './ComicsCard';
-
-
-
-
-
 import useMarvelService from '../../services/marvelService';
+
+
+
+
+
+
 import Spinner from '../Spinner';
 
 const ComicsList = ({ onComicSelected }: { onComicSelected: (id: number) => void}) => {
@@ -63,7 +64,7 @@ const content = comics ? <ViewComics comics={comics} onComicSelected={onComicSel
     return (
         <div className="comics__list">
             <ul className="comics__grid">
-                    {/* <ViewComics comics={comics} onComicSelected={onComicSelected}/> */}
+                   
                     
                     {content}
                     {loadingSpiner}
@@ -71,7 +72,7 @@ const content = comics ? <ViewComics comics={comics} onComicSelected={onComicSel
             </ul>
             <button 
                 className="button button__main button__long"
-                /* style={{'display': comicsEnded ? 'none' : 'block'}} */
+               
                 onClick={() => onRequest(offset)}
                 >
                 <div className="inner">load more</div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IRanChar } from './interfaceChar';
+import { IRanChar } from '../../store/type/chars';
 const View = ({char, onCharSelected} : {char: IRanChar, onCharSelected: (id: number) => void}) => {
     
     const {id, name, description, thumbnail, homepage, wiki} = char;

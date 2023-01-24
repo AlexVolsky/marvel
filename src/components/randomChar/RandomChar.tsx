@@ -3,9 +3,10 @@ import Spinner from '../Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import View from './View';
 import './randomChar.scss';
+import useMarvelService from '../../services/marvelService';
 
 import mjolnir from '../../resources/img/mjolnir.png';
-import useMarvelService from '../../services/marvelService';
+
 
 
 

@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './charInfo.scss';
+import { IChar } from '../../store/type/chars';
 
 
 import Spinner from '../Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Skeleton from '../skeleton/Skeleton';
-
+import Skeleton from '../skeleton/Skeleton'; 
 import useMarvelService from '../../services/marvelService';
 
-export interface IChar {
-  id: number
-  name: string;
-  description: string;
-  thumbnail: string;
-  homepage: string;
-  wiki: string;
-  comics: IComics[];
-}
 
-export interface IComics {
-  name: string;
-  resourceURI: string
-}
+
+
+
 
 
 const CharInfo = ({ charId }: { charId: number }) => {
+
+  const { getCharacter } = useMarvelService();
   const initialChar = {
     id: 0,
     name: '',
@@ -34,7 +26,7 @@ const CharInfo = ({ charId }: { charId: number }) => {
     wiki: '',
     comics: [],
   };
-  const {getCharacter} = useMarvelService();
+
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [char, setChar] = useState<IChar>(initialChar);

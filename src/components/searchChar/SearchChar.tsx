@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage as FormikErrorMessage } from 'formik';
-import { IRanChar } from '../randomChar/interfaceChar';
+import { IRanChar } from '../../store/type/chars';
 import { Link } from 'react-router-dom';
 import useMarvelService from '../../services/marvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
